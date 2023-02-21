@@ -16,7 +16,7 @@ def get_img_name(filename):
 
 
 def get_audio_length(filename):
-    y, sr = librosa.load(f"../dataset/cv-dev/{filename}")
+    y, sr = librosa.load(f"../dataset/cv-dev/cv-dev-cleaned/{filename}")
     yt , index = librosa.effects.trim(y=y)
     return librosa.get_duration(y=yt, sr=sr)
 
@@ -60,7 +60,6 @@ def main():
         if audio_len > 2:
             row["img"] = get_img_name(row["filename"])
             row["length"] = audio_len
-            df_out.at[index] = row
             # generate_spec(row["filename"])
             # print(f"Generating spec for {row['filename']}...")
         else:
