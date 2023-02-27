@@ -41,6 +41,21 @@ def main():
     print(df.head())
     print("Generating MFCC now ...")
 
+    df_m = df.loc[ df["gender"] == "male" ]
+    df_f = df.loc[ df["gender"] == "female" ]
+
+    print("Before")
+    print(f"Male    : {df_m.shape}")
+    print(f"Female  : {df_f.shape}")
+
+    df_m = df_m.sample(n=len(df_f))
+    df = pd.concat([ df_m, df_f ], ignore_index=True)
+
+    print("After")
+    print(f"Male    : {df_m.shape}")
+    print(f"Female  : {df_f.shape}")
+    print(f"Total   : {df.shape}")
+
     #   iteration steps
     for index, row in df.iterrows():
 
