@@ -19,7 +19,7 @@ In this project, we aim to build a machine learning model that can identify the 
 
 # Notebook Details
 ## Training
-The `notebook` folder contains four notebooks. Each of the notebooks are named as: `[Data-Type]_[Dataset]_[Model]`. These notebooks are used to train individual models on the train datasets.
+The `training` folder contains four notebooks. Each of the notebooks are named as: `[Data-Type]_[Dataset]_[Model]`. These notebooks are used to train individual models on the train datasets.
 
 ```      
 └── training
